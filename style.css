@@ -539,10 +539,11 @@ body {
 }
 
 /* ===================================================
-   PÁGINA DE ESTUDOS (GRADE DE 3 COLUNAS - 12 CARDS)
+   PÁGINA DE ESTUDOS (GRADE DE 3 COLUNAS - BLINDADA)
    =================================================== */
 .page-wrapper {
     padding: 2.5rem 0 4rem 0;
+    width: 100%;
 }
 
 .page-container {
@@ -570,24 +571,26 @@ body {
     line-height: 1.5;
 }
 
-/* GRADE DE 3 COLUNAS (12 CARDS) */
+/* ESTRUTURA DA GRADE EM 3 COLUNAS */
 .posts-grid-12 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha no desktop */
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 3rem !important;
+    width: 100% !important;
 }
 
-/* CARDS DA GRADE */
+/* ESTILO E LIMITAÇÃO DOS CARDS */
 .study-grid-card {
     background-color: var(--header-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden !important;
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100% !important;
 }
 
 .study-grid-card:hover {
@@ -597,19 +600,25 @@ body {
 
 .study-card-image {
     position: relative;
-    height: 170px;
+    width: 100% !important;
+    height: 170px !important;
+    overflow: hidden !important;
 }
 
+/* CORREÇÃO DO ERRO DA FOTO GIGANTE: LIMITA A IMAGEM AO CARD */
 .study-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 170px !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
 .study-card-image .tag {
     position: absolute;
     top: 10px;
     left: 10px;
+    z-index: 2;
 }
 
 .study-card-body {
@@ -664,11 +673,6 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 700;
-    transition: opacity 0.2s ease;
-}
-
-.read-more-btn:hover {
-    opacity: 0.8;
 }
 
 /* PAGINAÇÃO NUMÉRICA */
@@ -724,23 +728,15 @@ body {
     padding: 0 0.2rem;
 }
 
-/* RESPONSIVIDADE PARA TABLET E MOBILE */
+/* RESPONSIVIDADE PARA TABLETS E CELULARES */
 @media (max-width: 992px) {
     .posts-grid-12 {
-        grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 cards por linha no Tablet */
     }
 }
 
 @media (max-width: 640px) {
     .posts-grid-12 {
-        grid-template-columns: 1fr; /* 1 por linha no celular */
-    }
-
-    .page-title {
-        font-size: 1.6rem;
-    }
-
-    .pagination-container {
-        flex-wrap: wrap;
+        grid-template-columns: 1fr !important; /* 1 card por linha no Celular */
     }
 }
