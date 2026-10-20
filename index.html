@@ -3,298 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eu vi na EBD</title>
+    <title>Eu vi na EBD - Blog Bíblico e Educacional</title>
     <!-- Vinculando o CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@400,500,600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --primary: #0284c7;
-            --primary-hover: #0369a1;
-            --border-color: #e2e8f0;
-            --header-bg: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        }
+<body>
 
-        [data-theme="dark"] {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --primary: #38bdf8;
-            --primary-hover: #0ea5e9;
-            --border-color: #334155;
-            --header-bg: #1e293b;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--header-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.5rem 0.75rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--border-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .nav-container {
-                padding: 1rem;
-            }
-        }
-
-        /* Destaque Principal */
-        .featured-post {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-        }
-
-        .featured-content {
-            padding: 2rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .post-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .post-excerpt {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 0.6rem 1.25rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Grid de Posts */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 600px) {
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .post-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .post-card .post-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .post-card .post-excerpt {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .widget {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-
-        .widget-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .verse-box {
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .verse-ref {
-            display: block;
-            margin-top: 0.75rem;
-            font-weight: 600;
-            font-style: normal;
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .categories-list {
-            list-style: none;
-        }
-
-        .categories-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .categories-list li:last-child {
-            border-bottom: none;
-        }
-
-        .categories-list a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-
-        .categories-list a:hover {
-            color: var(--primary);
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            background-color: var(--header-bg);
-        }
-    </style>
-</head>
-
-    <body>
-
+    <!-- CABEÇALHO E MENU DE NAVEGAÇÃO -->
     <header class="navbar-header">
         <div class="header-container">
             
-            <!-- Logo do Blog (Vinculada à página inicial) -->
+            <!-- Logo do Blog (Link para inicio) -->
             <a href="index.html" class="brand-logo" aria-label="Página Inicial - Eu vi na EBD">
                 <span class="logo-icon">
-                    <!-- Ícone minimalista de Bíblia / Livro Aberto em SVG -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -304,14 +25,14 @@
                 <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
             </a>
 
-            <!-- Botão Hambúrguer para Mobile/Tablet -->
+            <!-- Botão Hambúrguer Mobile -->
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
 
-            <!-- Navegação de Links -->
+            <!-- Links de Navegação -->
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link active">Início</a></li>
@@ -331,36 +52,7 @@
         </div>
     </header>
 
-    <!-- Script leve para interatividade do menu e do tema -->
-    <script>
-        // Lógica do Menu Hambúrguer
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navMenu = document.getElementById('navMenu');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Lógica de Alternância de Tema (Claro / Escuro)
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const htmlElement = document.documentElement;
-
-        // Recupera o tema salvo no navegador (se houver)
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
-
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
-<body>
-
-<!-- CONTEÚDO PRINCIPAL DO BLOG -->
+    <!-- CONTEÚDO PRINCIPAL DO BLOG (2 COLUNAS) -->
     <main class="main-wrapper">
         <div class="content-container">
             
@@ -371,6 +63,7 @@
                 <section class="mosaic-section">
                     <h2 class="section-title">Destaques da Semana</h2>
                     <div class="mosaic-grid">
+                        
                         <article class="mosaic-card large-card">
                             <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=800&auto=format&fit=crop" alt="Bíblia Sagrada">
                             <div class="mosaic-overlay">
@@ -400,16 +93,18 @@
                                 <div class="card-meta"><span>15 Out, 2026</span></div>
                             </div>
                         </article>
+
                     </div>
                 </section>
 
                 <!-- 2. FEED DE ESTUDOS (4 Cards) -->
-                <section class="feed-section">
+                <section class="feed-section" id="estudos">
                     <div class="section-header">
                         <h2 class="section-title">Estudos Bíblicos</h2>
                         <a href="#estudos" class="see-all">Ver todos →</a>
                     </div>
                     <div class="feed-grid">
+                        
                         <article class="feed-card">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1507434965515-61970f2bd7c6?q=80&w=500&auto=format&fit=crop" alt="Estudo Bíblico">
@@ -469,16 +164,18 @@
                                 </div>
                             </div>
                         </article>
+
                     </div>
                 </section>
 
                 <!-- 3. FEED DE REFLEXÕES (4 Cards) -->
-                <section class="feed-section">
+                <section class="feed-section" id="reflexoes">
                     <div class="section-header">
                         <h2 class="section-title">Reflexões & Crônicas</h2>
                         <a href="#reflexoes" class="see-all">Ver todas →</a>
                     </div>
                     <div class="feed-grid">
+                        
                         <article class="feed-card">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1509021436468-1b5a3f4e71c7?q=80&w=500&auto=format&fit=crop" alt="Montanhas">
@@ -538,54 +235,81 @@
                                 </div>
                             </div>
                         </article>
+
                     </div>
                 </section>
 
-                <!-- 4. MAIS ACESSADOS (LISTA COMPACTA NA ESQUERDA) -->
-                <section class="left-ranking-section">
-                    <h2 class="section-title">🔥 Mais Acessados</h2>
-                    <ul class="left-ranking-list">
-                        <li class="left-ranking-item">
-                            <span class="rank-badge">1</span>
-                            <div class="rank-item-content">
-                                <a href="#" class="rank-item-title">Aula 05: A Armadura de Deus - Efésios 6 na Prática Diária</a>
-                                <span class="rank-item-meta"><span class="tag tag-revista">Lição EBD</span> • 12.4k acessos</span>
+                <!-- 4. MAIS ACESSADOS -->
+                <section class="popular-posts-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <span>🔥</span> Mais Acessados
+                        </h2>
+                    </div>
+
+                    <div class="popular-posts-list">
+                        
+                        <a href="#" class="popular-card">
+                            <div class="rank-badge rank-1">01</div>
+                            <div class="popular-card-content">
+                                <div class="card-meta-top">
+                                    <span class="tag tag-revista">Lição EBD</span>
+                                    <span class="views-info">12.4k acessos</span>
+                                </div>
+                                <h3 class="card-post-title">Aula 05: A Armadura de Deus - Efésios 6 na Prática Diária</h3>
                             </div>
-                        </li>
-                        <li class="left-ranking-item">
-                            <span class="rank-badge">2</span>
-                            <div class="rank-item-content">
-                                <a href="#" class="rank-item-title">O Verdadeiro Significado da Mordomia Cristã na Atualidade</a>
-                                <span class="rank-item-meta"><span class="tag tag-estudos">Estudos</span> • 9.8k acessos</span>
+                        </a>
+
+                        <a href="#" class="popular-card">
+                            <div class="rank-badge rank-2">02</div>
+                            <div class="popular-card-content">
+                                <div class="card-meta-top">
+                                    <span class="tag tag-estudos">Estudos</span>
+                                    <span class="views-info">9.8k acessos</span>
+                                </div>
+                                <h3 class="card-post-title">O Verdadeiro Significado da Mordomia Cristã na Atualidade</h3>
                             </div>
-                        </li>
-                        <li class="left-ranking-item">
-                            <span class="rank-badge">3</span>
-                            <div class="rank-item-content">
-                                <a href="#" class="rank-item-title">Aula 01: O Caráter do Deus Criador e Sustentador</a>
-                                <span class="rank-item-meta"><span class="tag tag-revista">Editora Betel</span> • 8.1k acessos</span>
+                        </a>
+
+                        <a href="#" class="popular-card">
+                            <div class="rank-badge rank-3">03</div>
+                            <div class="popular-card-content">
+                                <div class="card-meta-top">
+                                    <span class="tag tag-revista">Editora Betel</span>
+                                    <span class="views-info">8.1k acessos</span>
+                                </div>
+                                <h3 class="card-post-title">Aula 01: O Caráter do Deus Criador e Sustentador</h3>
                             </div>
-                        </li>
-                        <li class="left-ranking-item">
-                            <span class="rank-badge">4</span>
-                            <div class="rank-item-content">
-                                <a href="#" class="rank-item-title">A Paciência de Jó e as Lições do Deserto</a>
-                                <span class="rank-item-meta"><span class="tag tag-reflexoes">Reflexões</span> • 7.5k acessos</span>
+                        </a>
+
+                        <a href="#" class="popular-card">
+                            <div class="rank-badge">04</div>
+                            <div class="popular-card-content">
+                                <div class="card-meta-top">
+                                    <span class="tag tag-reflexoes">Reflexões</span>
+                                    <span class="views-info">7.5k acessos</span>
+                                </div>
+                                <h3 class="card-post-title">A Paciência de Jó e as Lições do Deserto</h3>
                             </div>
-                        </li>
-                        <li class="left-ranking-item">
-                            <span class="rank-badge">5</span>
-                            <div class="rank-item-content">
-                                <a href="#" class="rank-item-title">Compreendendo as Cartas Paulinas</a>
-                                <span class="rank-item-meta"><span class="tag tag-estudos">Estudos</span> • 6.2k acessos</span>
+                        </a>
+
+                        <a href="#" class="popular-card">
+                            <div class="rank-badge">05</div>
+                            <div class="popular-card-content">
+                                <div class="card-meta-top">
+                                    <span class="tag tag-estudos">Estudos</span>
+                                    <span class="views-info">6.2k acessos</span>
+                                </div>
+                                <h3 class="card-post-title">Compreendendo as Cartas Paulinas</h3>
                             </div>
-                        </li>
-                    </ul>
+                        </a>
+
+                    </div>
                 </section>
 
             </div>
 
-            <!-- COLUNA DIREITA (SIDEBAR) -->
+            <!-- COLUNA DIREITA (SIDEBAR WIDGETS) -->
             <aside class="sidebar">
                 
                 <!-- WIDGET 1: Versículo do Dia -->
@@ -614,7 +338,7 @@
                     </div>
                 </div>
 
-                <!-- WIDGET 3: Receber Atualizações (Newsletter) -->
+                <!-- WIDGET 3: Newsletter / Assinar Blog -->
                 <div class="widget newsletter-widget">
                     <div class="widget-header">
                         <h3>📩 Receba as Novidades</h3>
@@ -626,15 +350,15 @@
                     </form>
                 </div>
 
-                <!-- WIDGET 4: Editora Betel -->
+                <!-- WIDGET 4: Revista Editora Betel -->
                 <div class="widget magazine-widget">
                     <div class="widget-header">
                         <h3>Editora Betel</h3>
                         <span class="badge-trimestre">4º Trimestre</span>
                     </div>
                     <div class="magazine-info">
-                        <strong>Tema:</strong>
-                        <p class="theme-title">A Doutrina de Deus: Conhecendo o Criador</p>
+                        <strong>Tema Geral:</strong>
+                        <p class="theme-title">A Doutrina de Deus: Conhecendo o Criador e Redentor</p>
                     </div>
                     <details class="lessons-accordion">
                         <summary>Ver as 13 Lições</summary>
@@ -656,14 +380,14 @@
                     </details>
                 </div>
 
-                <!-- WIDGET 5: Editora CPAD -->
+                <!-- WIDGET 5: Revista Editora CPAD -->
                 <div class="widget magazine-widget">
                     <div class="widget-header">
                         <h3>Editora CPAD</h3>
                         <span class="badge-trimestre">4º Trimestre</span>
                     </div>
                     <div class="magazine-info">
-                        <strong>Tema:</strong>
+                        <strong>Tema Geral:</strong>
                         <p class="theme-title">A Batalha Espiritual do Cristão no Século XXI</p>
                     </div>
                     <details class="lessons-accordion">
@@ -690,83 +414,78 @@
 
         </div>
     </main>
-    
 
-    <div class="container">
-        <!-- Conteúdo Principal -->
-        <main>
-            <article class="featured-post">
-                <div class="featured-content">
-                    <span class="badge">Estudo em Destaque</span>
-<h2 class="post-title">O Verdadeiro Significado da Mordomia Cristã na Atualidade</h2>
-                    <p class="post-excerpt">Uma análise profunda sobre como administramos nosso tempo, talentos e recursos à luz das lições da Escola Bíblica Dominical, entendendo nosso papel como despenseiros fiéis...</p>
-                    <a href="#" class="btn">Ler Artigo Completo</a>
-                </div>
-            </article>
-
-            <div class="posts-grid">
-                <article class="post-card">
-                    <div>
-                        <span class="badge" style="background-color: #0d9488;">Reflexão</span>
-                        <h3 class="post-title">A Paciência de Jó e as Lições do Deserto</h3>
-                        <p class="post-excerpt">O que aprendemos quando o silêncio de Deus nos convida a uma fé mais madura e resiliente no dia a dia?</p>
-                    </div>
-                    <a href="#" class="btn" style="align-self: flex-start;">Ler mais</a>
-                </article>
-
-                <article class="post-card">
-                    <div>
-                        <span class="badge" style="background-color: #d97706;">Doutrina</span>
-                        <h3 class="post-title">Compreendendo as Cartas Paulinas</h3>
-                        <p class="post-excerpt">Um panorama prático sobre o contexto histórico e a aplicação espiritual das cartas aos Efésios.</p>
-                    </div>
-                    <a href="#" class="btn" style="align-self: flex-start;">Ler mais</a>
-                </article>
+    <!-- RODAPÉ DO BLOG -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <path d="M12 6v10"></path>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+                </a>
+                <p class="footer-description">Conteúdo bíblico, estudos e lições para a Escola Bíblica Dominical e crescimento cristão.</p>
             </div>
-        </main>
-
-        <!-- Barra Lateral -->
-        <aside class="sidebar">
-            <div class="widget">
-                <h3 class="widget-title">Versículo do Dia</h3>
-                <blockquote class="verse-box">
-                    "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho."
-                    <span class="verse-ref">— Salmos 119:105</span>
-                </blockquote>
+            
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="#estudos">Estudos</a>
+                <a href="#reflexoes">Reflexões</a>
+                <a href="#sobre">Sobre</a>
             </div>
+        </div>
 
-            <div class="widget">
-                <h3 class="widget-title">Categorias</h3>
-                <ul class="categories-list">
-                    <li><a href="#">Estudos Bíblicos (12)</a></li>
-                    <li><a href="#">Reflexões e Crônicas (8)</a></li>
-                    <li><a href="#">Lições da EBD (15)</a></li>
-                    <li><a href="#">Perguntas e Respostas (5)</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Eu vi na EBD. Todos os direitos reservados. Desenvolvido com dedicação à Palavra.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eu vi na EBD. Criado por <strong>Tiago Correia</strong> — Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <!-- SCRIPTS LEVES (Menu Hambúrguer, Modo Claro/Escuro e Versículos) -->
     <script>
-        // Lógica para Alternar o Tema (Claro / Escuro)
-        const themeToggle = document.getElementById('themeToggle');
+        // 1. Lógica do Menu Hambúrguer (Mobile)
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 2. Alternância de Tema (Light / Dark) com LocalStorage
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
         const htmlElement = document.documentElement;
 
-        // Verifica preferência salva ou padrão do sistema
         const savedTheme = localStorage.getItem('theme') || 'light';
         htmlElement.setAttribute('data-theme', savedTheme);
 
-        themeToggle.addEventListener('click', () => {
+        themeToggleBtn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
+
+        // 3. Alternador Dinâmico de Versículos
+        const verses = [
+            { quote: "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho.", ref: "Salmos 119:105" },
+            { quote: "Tudo posso naquele que me fortalece.", ref: "Filipenses 4:13" },
+            { quote: "O Senhor é o meu pastor; nada me faltará.", ref: "Salmos 23:1" },
+            { quote: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito...", ref: "João 3:16" },
+            { quote: "Buscar-me-eis e me achareis quando me buscardes de todo o vosso coração.", ref: "Jeremias 29:13" }
+        ];
+
+        let verseIndex = 0;
+        function nextVerse() {
+            verseIndex = (verseIndex + 1) % verses.length;
+            document.getElementById('dailyVerse').textContent = `"${verses[verseIndex].quote}"`;
+            document.getElementById('dailyRef').textContent = `— ${verses[verseIndex].ref}`;
+        }
     </script>
 
 </body>
