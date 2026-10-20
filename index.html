@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO E MENU DE NAVEGAÇÃO -->
+    <!-- CABEÇALHO E NAVBAR -->
     <header class="navbar-header">
         <div class="header-container">
             
@@ -52,7 +52,7 @@
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL DO BLOG (2 COLUNAS) -->
+    <!-- CONTEÚDO PRINCIPAL (2 COLUNAS) -->
     <main class="main-wrapper">
         <div class="content-container">
             
@@ -239,80 +239,20 @@
                     </div>
                 </section>
 
-                <!-- 4. MAIS ACESSADOS -->
-                <section class="popular-posts-section">
-                    <div class="section-header">
-                        <h2 class="section-title">
-                            <span>🔥</span> Mais Acessados
-                        </h2>
-                    </div>
-
-                    <div class="popular-posts-list">
-                        
-                        <a href="#" class="popular-card">
-                            <div class="rank-badge rank-1">01</div>
-                            <div class="popular-card-content">
-                                <div class="card-meta-top">
-                                    <span class="tag tag-revista">Lição EBD</span>
-                                    <span class="views-info">12.4k acessos</span>
-                                </div>
-                                <h3 class="card-post-title">Aula 05: A Armadura de Deus - Efésios 6 na Prática Diária</h3>
-                            </div>
-                        </a>
-
-                        <a href="#" class="popular-card">
-                            <div class="rank-badge rank-2">02</div>
-                            <div class="popular-card-content">
-                                <div class="card-meta-top">
-                                    <span class="tag tag-estudos">Estudos</span>
-                                    <span class="views-info">9.8k acessos</span>
-                                </div>
-                                <h3 class="card-post-title">O Verdadeiro Significado da Mordomia Cristã na Atualidade</h3>
-                            </div>
-                        </a>
-
-                        <a href="#" class="popular-card">
-                            <div class="rank-badge rank-3">03</div>
-                            <div class="popular-card-content">
-                                <div class="card-meta-top">
-                                    <span class="tag tag-revista">Editora Betel</span>
-                                    <span class="views-info">8.1k acessos</span>
-                                </div>
-                                <h3 class="card-post-title">Aula 01: O Caráter do Deus Criador e Sustentador</h3>
-                            </div>
-                        </a>
-
-                        <a href="#" class="popular-card">
-                            <div class="rank-badge">04</div>
-                            <div class="popular-card-content">
-                                <div class="card-meta-top">
-                                    <span class="tag tag-reflexoes">Reflexões</span>
-                                    <span class="views-info">7.5k acessos</span>
-                                </div>
-                                <h3 class="card-post-title">A Paciência de Jó e as Lições do Deserto</h3>
-                            </div>
-                        </a>
-
-                        <a href="#" class="popular-card">
-                            <div class="rank-badge">05</div>
-                            <div class="popular-card-content">
-                                <div class="card-meta-top">
-                                    <span class="tag tag-estudos">Estudos</span>
-                                    <span class="views-info">6.2k acessos</span>
-                                </div>
-                                <h3 class="card-post-title">Compreendendo as Cartas Paulinas</h3>
-                            </div>
-                        </a>
-
-                    </div>
-                </section>
-
             </div>
 
-            <!-- COLUNA DIREITA (SIDEBAR WIDGETS) -->
+            <!-- COLUNA DIREITA (SIDEBAR REORGANIZADA) -->
             <aside class="sidebar">
                 
-                <!-- WIDGET 1: Versículo do Dia -->
+                <!-- WIDGET 1: ÁREA DE PESQUISA (NOVO - NO TOPO) -->
+                <div class="widget search-widget">
+                    <form class="search-form" onsubmit="event.preventDefault(); alert('Pesquisando por: ' + this.searchQuery.value);">
+                        <input type="text" name="searchQuery" placeholder="Pesquisar estudos, lições..." required class="search-input">
+                        <button type="submit" class="search-btn" aria-label="Buscar">🔍</button>
+                    </form>
+                </div>
+
+                <!-- WIDGET 2: Versículo do Dia -->
                 <div class="widget verse-widget">
                     <div class="widget-header">
                         <h3>📖 Versículo do Dia</h3>
@@ -326,31 +266,53 @@
                     </div>
                 </div>
 
-                <!-- WIDGET 2: Palavra Bíblica / Devocional -->
-                <div class="widget bible-word-widget">
+                <!-- WIDGET 3: PREVISÃO DO TEMPO 5 DIAS VIA GPS (NOVO) -->
+                <div class="widget weather-widget">
                     <div class="widget-header">
-                        <h3>🌱 Palavra Bíblica</h3>
+                        <h3>🌤️ Clima na sua Região</h3>
+                        <span class="weather-location" id="weatherLocation">Localizando GPS...</span>
                     </div>
-                    <div class="word-content">
-                        <span class="word-subtitle">Reflexão para Hoje</span>
-                        <h4>Permanecendo Firmes</h4>
-                        <p>Nos momentos de incerteza, lembre-se de que a nossa esperança não está fundamentada nas circunstâncias deste mundo, mas na imutável fidelidade da Palavra de Deus.</p>
+                    <div class="weather-forecast-container" id="weatherForecast">
+                        <p class="weather-loading">Obtendo dados do tempo...</p>
                     </div>
                 </div>
 
-                <!-- WIDGET 3: Newsletter / Assinar Blog -->
+                <!-- WIDGET 4: PALAVRA BÍBLICA / DEVOCIONAL (30 DIÁRIAS RESTRUTURADAS) -->
+                <div class="widget bible-word-widget">
+                    <div class="widget-header">
+                        <h3>🌱 Palavra Bíblica Diária</h3>
+                        <span class="word-day-badge" id="devotionalDay">Dia 1</span>
+                    </div>
+                    <div class="word-content">
+                        <h4 id="devotionalTitle">Carregando Reflexão...</h4>
+                        <p class="word-verse" id="devotionalVerse"></p>
+                        <p id="devotionalText"></p>
+                    </div>
+                </div>
+
+                <!-- WIDGET 5: MAIS ACESSADOS (LISTA SIMPLES DE 1 A 5 RE-ORDENÁVEL VIA JS) -->
+                <div class="widget popular-simple-widget">
+                    <div class="widget-header">
+                        <h3>🔥 Mais Acessados</h3>
+                    </div>
+                    <ol class="simple-rank-list" id="popularRankList">
+                        <!-- Gerado/Ordenado via JavaScript -->
+                    </ol>
+                </div>
+
+                <!-- WIDGET 6: Newsletter / Assinar Blog -->
                 <div class="widget newsletter-widget">
                     <div class="widget-header">
                         <h3>📩 Receba as Novidades</h3>
                     </div>
-                    <p class="newsletter-desc">Cadastre seu e-mail e receba os novos estudos, reflexões e esboços da EBD diretamente na sua caixa de entrada.</p>
+                    <p class="newsletter-desc">Cadastre seu e-mail e receba os novos estudos e lições da EBD diretamente na sua caixa de entrada.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
                         <input type="email" placeholder="Seu melhor e-mail..." required class="newsletter-input">
                         <button type="submit" class="newsletter-btn">Assinar Blog</button>
                     </form>
                 </div>
 
-                <!-- WIDGET 4: Revista Editora Betel -->
+                <!-- WIDGET 7: Revista Editora Betel -->
                 <div class="widget magazine-widget">
                     <div class="widget-header">
                         <h3>Editora Betel</h3>
@@ -380,7 +342,7 @@
                     </details>
                 </div>
 
-                <!-- WIDGET 5: Revista Editora CPAD -->
+                <!-- WIDGET 8: Revista Editora CPAD -->
                 <div class="widget magazine-widget">
                     <div class="widget-header">
                         <h3>Editora CPAD</h3>
@@ -445,33 +407,30 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS LEVES (Menu Hambúrguer, Modo Claro/Escuro e Versículos) -->
+    <!-- LOGICA JAVASCRIPT INTEGRADA -->
     <script>
-        // 1. Lógica do Menu Hambúrguer (Mobile)
+        // 1. Menu Hambúrguer Mobile
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const navMenu = document.getElementById('navMenu');
-
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // 2. Alternância de Tema (Light / Dark) com LocalStorage
+        // 2. Alternador de Tema Claro/Escuro
         const themeToggleBtn = document.getElementById('themeToggleBtn');
         const htmlElement = document.documentElement;
-
         const savedTheme = localStorage.getItem('theme') || 'light';
         htmlElement.setAttribute('data-theme', savedTheme);
 
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
 
-        // 3. Alternador Dinâmico de Versículos
+        // 3. Versículo do Dia Dinâmico
         const verses = [
             { quote: "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho.", ref: "Salmos 119:105" },
             { quote: "Tudo posso naquele que me fortalece.", ref: "Filipenses 4:13" },
@@ -479,13 +438,165 @@
             { quote: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito...", ref: "João 3:16" },
             { quote: "Buscar-me-eis e me achareis quando me buscardes de todo o vosso coração.", ref: "Jeremias 29:13" }
         ];
-
         let verseIndex = 0;
         function nextVerse() {
             verseIndex = (verseIndex + 1) % verses.length;
             document.getElementById('dailyVerse').textContent = `"${verses[verseIndex].quote}"`;
             document.getElementById('dailyRef').textContent = `— ${verses[verseIndex].ref}`;
         }
+
+        // 4. BANCO DE DADOS DE 30 DEVOCIONAIS DIÁRIOS (Gira automaticamente conforme o dia do mês)
+        const dailyDevotionals = [
+            { day: 1, title: "Permanecendo Firmes", verse: "1 Coríntios 15:58", text: "Mesmo nas tempestades cotidianas, nossa esperança repousa na fidelidade imutável da Palavra de Deus." },
+            { day: 2, title: "A Graça que RENOVA", verse: "Lamentações 3:22-23", text: "As misericórdias do Senhor se renovam a cada manhã. Hoje é uma nova oportunidade para recomeçar." },
+            { day: 3, title: "Andando em Amor", verse: "Efésios 5:2", text: "Pratique o amor gracioso em todas as interações diárias, refletindo a essência do Mestre Jesus." },
+            { day: 4, title: "Paz em Meio ao Caos", verse: "João 14:27", text: "A paz que Cristo concede excede todo entendimento e sustenta o coração diante das incertezas." },
+            { day: 5, title: "Fortalecidos no Senhor", verse: "Isaías 40:31", text: "Aqueles que esperam no Senhor renovam suas forças e voam alto como águias no Espírito." },
+            { day: 6, title: "Sabedoria do Alto", verse: "Tiago 1:5", text: "Se necessita de discernimento para decidir algo hoje, peça a Deus com fé, e Ele responderá." },
+            { day: 7, title: "O Poder da Oração", verse: "1 Tessalonicenses 5:17", text: "Mantenha uma atitude de constante diálogo com Deus ao longo de todas as tarefas de hoje." },
+            { day: 8, title: "A Verdadeira Alegria", verse: "Neemias 8:10", text: "A alegria vinda do Senhor é nossa força protetora, independente do cenário exterior." },
+            { day: 9, title: "Coragem para Avançar", verse: "Josué 1:9", text: "Sê forte e corajoso! O Senhor, teu Deus, é contigo por onde quer que andares." },
+            { day: 10, title: "Confiança Total", verse: "Provérbios 3:5", text: "Confie no Senhor de todo o seu coração e não se apoie no seu próprio entendimento humano." },
+            { day: 11, title: "Serviço Humilde", verse: "Gálatas 5:13", text: "Use a liberdade que você recebeu em Cristo para servir ao próximo com altruísmo e amor." },
+            { day: 12, title: "Luz no Mundo", verse: "Mateus 5:16", text: "Deixe sua luz brilhar através de boas obras, manifestando a glória do Pai Celestial." },
+            { day: 13, title: "Escudo Inabalável", verse: "Salmos 18:30", text: "O caminho de Deus é perfeito e Sua promessa é comprovada; Ele é escudo para quem Nele confia." },
+            { day: 14, title: "Coração Puro", verse: "Salmos 51:10", text: "Peça a Deus um coração puro e um espírito renovado para caminhar em retidão." },
+            { day: 15, title: "O Bom Pastor", verse: "Salmos 23:3", text: "Ele guia nossas almas pelas veredas da justiça por amor do Seu santo Nome." },
+            { day: 16, title: "Vitória na Provocação", verse: "Romanos 12:21", text: "Não se deixe vencer pelo mal, mas vença o mal praticando o bem intencional." },
+            { day: 17, title: "Fruto de Justiça", verse: "Gálatas 5:22", text: "Busque cultivar o fruto do Espírito: amor, alegria, paz, paciência, bondade e domínio próprio." },
+            { day: 18, title: "Esperança Viva", verse: "1 Pedro 1:3", text: "Fomos regenerados para uma viva esperança mediante a ressurreição triunfante de Jesus." },
+            { day: 19, title: "A Palavra que Alimenta", verse: "Mateus 4:4", text: "Não só de pão vive o homem, mas de toda palavra que sai da boca de Deus." },
+            { day: 20, title: "Gratidão Contínua", verse: "Salmos 103:2", text: "Bendiga ao Senhor a minha alma e não se esqueça de nenhum de Seus benefícios." },
+            { day: 21, title: "Guarda do Coração", verse: "Provérbios 4:23", text: "Sobre tudo o que se deve guardar, guarde o seu coração, pois dele procedem as fontes da vida." },
+            { day: 22, title: "Refúgio Seguro", verse: "Salmos 46:1", text: "Deus é o nosso refúgio e fortaleza, socorro bem presente nas tribulações." },
+            { day: 23, title: "Caminhando em Unidade", verse: "Colossenses 3:14", text: "Acima de tudo, revista-se do amor, que é o elo perfeito para a união da igreja." },
+            { day: 24, title: "Descanso Verdadeiro", verse: "Mateus 11:28", text: "Vinde a mim todos os que estais cansados e sobrecarregados, e eu vos aliviarei." },
+            { day: 25, title: "Fidelidade nas Pequenas Coisas", verse: "Lucas 16:10", text: "Quem é fiel no pouco também é fiel no muito. Honre a Deus nos detalhes do dia." },
+            { day: 26, title: "Perdão Restaurador", verse: "Colossenses 3:13", text: "Perdoai-vos mutuamente, assim como o Senhor vos perdoou em Cristo." },
+            { day: 27, title: "Soberania Divina", verse: "Romanos 8:28", text: "Todas as coisas cooperam para o bem daqueles que amam a Deus e são chamados segundo o Seu propósito." },
+            { day: 28, title: "Verdade que Liberta", verse: "João 8:32", text: "Conhecereis a verdade, e a verdade vos libertará de todas as amarras do engano." },
+            { day: 29, title: "Permanecendo na Videira", verse: "João 15:5", text: "Quem permanece em Cristo produz muito fruto; sem Ele, nada podemos fazer." },
+            { day: 30, title: "Promessa Eterna", verse: "Hebreus 10:23", text: "Retenhamos inabalável a confissão da nossa esperança, porque fiel é aquele que prometeu." }
+        ];
+
+        function loadDailyDevotional() {
+            const todayDay = new Date().getDate(); // Pega o dia atual do mês (1 a 31)
+            const selected = dailyDevotionals.find(d => d.day === todayDay) || dailyDevotionals[0];
+
+            document.getElementById('devotionalDay').textContent = `Dia ${selected.day}`;
+            document.getElementById('devotionalTitle').textContent = selected.title;
+            document.getElementById('devotionalVerse').textContent = `📖 ${selected.verse}`;
+            document.getElementById('devotionalText').textContent = selected.text;
+        }
+
+        // 5. MAIS ACESSADOS DINÂMICOS (Ordena automaticamente pelos posts com mais views)
+        const popularPostsData = [
+            { id: 1, title: "Aula 05: A Armadura de Deus - Efésios 6 na Prática", views: 12400, url: "#" },
+            { id: 2, title: "O Verdadeiro Significado da Mordomia Cristã", views: 9800, url: "#" },
+            { id: 3, title: "Aula 01: O Caráter do Deus Criador e Sustentador", views: 8100, url: "#" },
+            { id: 4, title: "A Paciência de Jó e as Lições do Deserto", views: 7500, url: "#" },
+            { id: 5, title: "Compreendendo as Cartas Paulinas", views: 6200, url: "#" }
+        ];
+
+        function renderPopularPosts() {
+            // Reordena do maior para o menor acesso
+            popularPostsData.sort((a, b) => b.views - a.views);
+            const container = document.getElementById('popularRankList');
+            container.innerHTML = '';
+
+            popularPostsData.slice(0, 5).forEach((post, index) => {
+                const li = document.createElement('li');
+                li.className = 'simple-rank-item';
+                li.innerHTML = `
+                    <span class="rank-number">${index + 1}</span>
+                    <a href="${post.url}" class="rank-link" title="${post.title}">
+                        <span class="rank-title">${post.title}</span>
+                        <small class="rank-views-badge">${(post.views / 1000).toFixed(1)}k acessos</small>
+                    </a>
+                `;
+                container.appendChild(li);
+            });
+        }
+
+        // 6. API DO CLIMA COM PREVISÃO DE 5 DIAS VIA GPS (Open-Meteo API)
+        function initWeatherAPI() {
+            const forecastContainer = document.getElementById('weatherForecast');
+            const locationText = document.getElementById('weatherLocation');
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        fetchWeatherData(lat, lon);
+                    },
+                    error => {
+                        // Se usuário negar GPS, carrega padrão (Brasília)
+                        locationText.textContent = "GPS Não Autorizado (Padrão: Brasília)";
+                        fetchWeatherData(-15.7801, -47.9292);
+                    }
+                );
+            } else {
+                locationText.textContent = "GPS não suportado";
+                fetchWeatherData(-15.7801, -47.9292);
+            }
+        }
+
+        async function fetchWeatherData(lat, lon) {
+            const forecastContainer = document.getElementById('weatherForecast');
+            const locationText = document.getElementById('weatherLocation');
+
+            try {
+                const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`);
+                const data = await response.json();
+
+                if (locationText.textContent.includes('Localizando')) {
+                    locationText.textContent = `Lat: ${lat.toFixed(2)}°, Lon: ${lon.toFixed(2)}°`;
+                }
+
+                forecastContainer.innerHTML = '';
+                const weekDays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+                for (let i = 0; i < 5; i++) {
+                    const dateStr = data.daily.time[i];
+                    const dateObj = new Date(dateStr + 'T00:00:00');
+                    const dayName = weekDays[dateObj.getDay()];
+                    const maxTemp = Math.round(data.daily.temperature_2m_max[i]);
+                    const minTemp = Math.round(data.daily.temperature_2m_min[i]);
+                    const code = data.daily.weathercode[i];
+                    
+                    const icon = getWeatherIcon(code);
+
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'weather-day-card';
+                    dayDiv.innerHTML = `
+                        <span class="w-day">${dayName}</span>
+                        <span class="w-icon">${icon}</span>
+                        <span class="w-temp">${maxTemp}° <small>${minTemp}°</small></span>
+                    `;
+                    forecastContainer.appendChild(dayDiv);
+                }
+            } catch (err) {
+                forecastContainer.innerHTML = '<p class="weather-error">Erro ao carregar o clima.</p>';
+            }
+        }
+
+        function getWeatherIcon(code) {
+            if (code === 0) return '☀️';
+            if (code >= 1 && code <= 3) return '⛅';
+            if (code >= 45 && code <= 48) return '🌫️';
+            if (code >= 51 && code <= 67) return '🌧️';
+            if (code >= 80 && code <= 82) return '🌦️';
+            if (code >= 95) return '⛈️';
+            return '🌤️';
+        }
+
+        // Executa funções ao carregar a página
+        window.addEventListener('DOMContentLoaded', () => {
+            loadDailyDevotional();
+            renderPopularPosts();
+            initWeatherAPI();
+        });
     </script>
 
 </body>
