@@ -336,4 +336,541 @@
         .share-buttons { display: flex; gap: 0.6rem; }
 
         .share-btn {
-            padding: 0.
+            padding: 0.45rem 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .share-btn.whatsapp { background-color: #25d366; color: #fff; }
+        .share-btn.facebook { background-color: #1877f2; color: #fff; }
+        .share-btn.copy-link { background-color: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); }
+
+        .author-bio-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .author-avatar-large {
+            width: 60px !important;
+            height: 60px !important;
+            min-width: 60px !important;
+            min-height: 60px !important;
+            border-radius: 50%;
+            background-color: var(--header-bg);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .author-bio-info h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.3rem; }
+        .author-bio-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+        .post-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .nav-post-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .nav-post-card:hover { border-color: var(--primary-color); }
+        .nav-post-card.next { text-align: right; }
+        .nav-label { font-size: 0.72rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; }
+        .nav-post-title { font-size: 0.88rem; font-weight: 600; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .related-posts-section { margin-top: 2rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+
+        .feed-card {
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feed-card .card-image { position: relative; height: 140px; }
+        .feed-card .card-image img { width: 100%; height: 100%; object-fit: cover; }
+        .feed-card .card-image .tag { position: absolute; top: 10px; left: 10px; }
+        .feed-card .card-body { padding: 1rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .feed-card h3 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--text-color); line-height: 1.35; }
+        .feed-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.85rem; flex-grow: 1; }
+        .feed-card .card-footer { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.65rem; }
+
+        /* ===================================================
+           COLUNA DIREITA (SIDEBAR)
+           =================================================== */
+        .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+        .widget { background-color: var(--header-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-sm); }
+        .widget-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .widget-header h3 { font-size: 1.05rem; color: var(--text-color); }
+
+        .search-widget { padding: 0.85rem 1rem; }
+        .search-form { display: flex; gap: 0.5rem; }
+        .search-input { flex-grow: 1; padding: 0.55rem 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--bg-color); color: var(--text-color); font-size: 0.85rem; outline: none; }
+        .search-input:focus { border-color: var(--primary-color); }
+        .search-btn { background-color: var(--primary-color); color: #ffffff; border: none; border-radius: 8px; padding: 0 0.8rem; cursor: pointer; }
+
+        .verse-widget { border-left: 4px solid var(--primary-color); }
+        .verse-quote { font-style: italic; font-size: 0.92rem; color: var(--text-color); line-height: 1.45; margin-bottom: 0.4rem; }
+        .verse-ref { display: block; font-size: 0.82rem; font-weight: 600; color: var(--primary-color); text-align: right; margin-bottom: 0.85rem; }
+        .verse-btn { width: 100%; background-color: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-color); padding: 0.45rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 500; }
+
+        .bible-word-widget { border-left: 4px solid #059669; }
+        .word-day-badge { font-size: 0.7rem; background-color: #d1fae5; color: #065f46; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px; }
+        .word-content h4 { font-size: 0.95rem; color: var(--text-color); margin-bottom: 0.2rem; }
+        .word-verse { font-size: 0.78rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.4rem; }
+        .word-content p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
+
+        .simple-rank-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+        .simple-rank-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0.2rem; border-bottom: 1px solid var(--border-color); }
+        .simple-rank-item:last-child { border-bottom: none; }
+        .rank-number { font-size: 0.9rem; font-weight: 800; color: var(--primary-color); background-color: var(--bg-color); border: 1px solid var(--border-color); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .rank-link { text-decoration: none; display: flex; flex-direction: column; gap: 0.1rem; flex-grow: 1; overflow: hidden; }
+        .rank-title { font-size: 0.83rem; font-weight: 600; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .rank-views-badge { font-size: 0.68rem; color: var(--text-muted); }
+
+        .newsletter-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.85rem; }
+        .newsletter-form { display: flex; flex-direction: column; gap: 0.5rem; }
+        .newsletter-input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-color); color: var(--text-color); font-size: 0.85rem; outline: none; }
+        .newsletter-btn { width: 100%; padding: 0.6rem; background-color: var(--primary-color); color: #ffffff; border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+
+        /* ===================================================
+           RODAPÉ (FOOTER)
+           =================================================== */
+        .main-footer {
+            background-color: var(--header-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0 1.5rem 0;
+            margin-top: 3rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand { max-width: 400px; }
+        .footer-description { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
+        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .footer-links a:hover { color: var(--primary-color); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 0 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-bottom strong { color: var(--text-color); }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .content-container { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-btn { display: flex; }
+            .hamburger-btn.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger-btn.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger-btn.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--header-bg);
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-md);
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                display: none;
+            }
+
+            .nav-menu.active { display: flex; }
+            .nav-list { flex-direction: column; gap: 1rem; width: 100%; }
+            .nav-link { display: block; font-size: 1.05rem; padding: 0.4rem 0; }
+            .theme-toggle-btn { justify-content: center; width: 100%; padding: 0.6rem; }
+
+            .single-post-article { padding: 1.25rem; }
+            .single-post-title { font-size: 1.5rem; }
+            .single-post-meta { flex-direction: column; align-items: flex-start; }
+            .post-navigation { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .author-bio-card { flex-direction: column; text-align: center; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .footer-brand { display: flex; flex-direction: column; align-items: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVBAR (Links usam ../ para voltar à raiz) -->
+    <header class="navbar-header">
+        <div class="header-container">
+            
+            <a href="../index.html" class="brand-logo" aria-label="Página Inicial - Eu vi na EBD">
+                <span class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <path d="M12 6v10"></path>
+                    </svg>
+                </span>
+                <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+            </a>
+
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="../estudos.html" class="nav-link active">Estudos</a></li>
+                    <li><a href="../reflexoes.html" class="nav-link">Reflexões</a></li>
+                    <li><a href="../sobre.html" class="nav-link">Sobre</a></li>
+                </ul>
+
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar Tema">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                    <span class="theme-text">Tema</span>
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (2 COLUNAS) -->
+    <main class="main-wrapper">
+        <div class="content-container">
+            
+            <!-- COLUNA ESQUERDA (ARTIGO COMPLETO) -->
+            <div class="main-content">
+                
+                <article class="single-post-article">
+                    
+                    <nav class="post-breadcrumbs" aria-label="Breadcrumbs">
+                        <a href="../index.html">Início</a> &rsaquo; 
+                        <a href="../estudos.html">Estudos Bíblicos</a> &rsaquo; 
+                        <span>Mordomia Cristã</span>
+                    </nav>
+
+                    <header class="single-post-header">
+                        <span class="tag tag-featured">Estudo Destaque</span>
+                        <h1 class="single-post-title">O Verdadeiro Significado da Mordomia Cristã na Atualidade</h1>
+                        
+                        <div class="single-post-meta">
+                            <div class="author-info-inline">
+                                <span class="author-avatar-mini">TC</span>
+                                <div>
+                                    <span class="author-name-text">Por <strong>Tiago Correia</strong></span>
+                                    <span class="meta-sub">Estudante de Teologia</span>
+                                </div>
+                            </div>
+                            <div class="post-stats-inline">
+                                <span>📅 20 Out, 2026</span>
+                                <span>⏱️ 8 min de leitura</span>
+                                <span>👁️ 12.4k leituras</span>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="single-post-cover">
+                        <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1000&auto=format&fit=crop" alt="Bíblia Aberta e Mordomia Cristã">
+                        <span class="cover-caption">A mordomia bíblica começa com o reconhecimento de que tudo pertence a Deus.</span>
+                    </div>
+
+                    <div class="single-post-body">
+                        <p class="lead-paragraph">
+                            Quando ouvimos a palavra <strong>mordomia</strong> no vocabulário secular contemporâneo, é comum associá-la a privilégios, luxo ou vida folgada. No entanto, na teologia bíblica e no contexto da Escola Bíblica Dominical, o conceito é exatamente o oposto: mordomia é a responsabilidade fiel de gerenciar o que pertence a outro.
+                        </p>
+
+                        <h2>1. A Origem do Conceito: O Mordomo Bíblico</h2>
+                        <p>
+                            No grego do Novo Testamento, a palavra traduzida como mordomo é <em>oikonomos</em> (de onde deriva a nossa palavra "economia"), que significa literalmente "aquele que administra a casa". O mordomo não era o proprietário dos bens, mas o servo de confiança incumbido de zelar pelos recursos do seu senhor.
+                        </p>
+
+                        <blockquote class="article-quote">
+                            "Do SENHOR é a terra e tudo o que nela há, o mundo e os que nela vivem."
+                            <cite>— Salmos 24:1</cite>
+                        </blockquote>
+
+                        <p>
+                            O ponto de partida para compreender a mordomia cristã é aceitar a soberania absoluta de Deus sobre todas as coisas. Nós não somos donos de nada; somos apenas despenseiros e administradores temporários dos recursos que o Criador nos confiou.
+                        </p>
+
+                        <h2>2. Os Quatro Pilares da Mordomia Bíblica</h2>
+                        <p>
+                            Uma mordomia cristã saudável abrange quatro áreas vitais da nossa existência diária:
+                        </p>
+
+                        <div class="callout-box">
+                            <h3>📌 Resumo dos Pilares Práticos</h3>
+                            <ul>
+                                <li><strong>Mordomia do Tempo:</strong> Remindo o tempo e estabelecendo prioridades espirituais na rotina.</li>
+                                <li><strong>Mordomia dos Talentos:</strong> Colocando dons espirituais e habilidades a serviço da igreja.</li>
+                                <li><strong>Mordomia dos Recursos Financeiros:</strong> Administrando o orçamento com honestidade e generosidade.</li>
+                                <li><strong>Mordomia do Corpo e Mente:</strong> Cuidando do templo do Espírito Santo.</li>
+                            </ul>
+                        </div>
+
+                        <h3>A Mordomia do Tempo na Era da Distração</h3>
+                        <p>
+                            Num século marcado pela hiperconexão e pelas constantes distrações digitais, administrar o tempo tornou-se um dos maiores desafios do discípulo de Cristo. Efésios 5:15-16 exorta: <em>"Tenham cuidado com a maneira como vocês vivem que não sejam insensatos, mas sábios, aproveitando ao máximo cada oportunidade, porque os dias são maus."</em>
+                        </p>
+
+                        <h2>3. Aplicação Prática para a Aula de EBD</h2>
+                        <p>
+                            Ao ensinar este tema na Escola Dominical, incentive os alunos a realizarem um diagnóstico pessoal. A mordomia não deve ser ensinada como um fardo regulatório, mas como um ato de gratidão e adoração a Deus por tudo o que Ele nos concedeu.
+                        </p>
+                    </div>
+
+                    <div class="post-share-section">
+                        <span class="share-title">Compartilhe este estudo:</span>
+                        <div class="share-buttons">
+                            <a href="https://api.whatsapp.com/send?text=Confira este estudo: O Verdadeiro Significado da Mordomia Cristã na Atualidade" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php" target="_blank" class="share-btn facebook">Facebook</a>
+                            <button class="share-btn copy-link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copiado com sucesso!');">📋 Copiar Link</button>
+                        </div>
+                    </div>
+
+                    <div class="author-bio-card">
+                        <div class="author-avatar-large">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="author-bio-info">
+                            <h3>Escrito por Tiago Correia</h3>
+                            <p>Estudante de Teologia e apaixonado pelo estudo das Escrituras Sagradas. Fundador do blog <strong>Eu vi na EBD</strong>, dedicado ao ensino e edificação cristã.</p>
+                        </div>
+                    </div>
+
+                    <nav class="post-navigation">
+                        <a href="#" class="nav-post-card prev">
+                            <span class="nav-label">← Estudo Anterior</span>
+                            <span class="nav-post-title">A Paciência de Jó e as Lições do Deserto</span>
+                        </a>
+                        <a href="#" class="nav-post-card next">
+                            <span class="nav-label">Próximo Estudo →</span>
+                            <span class="nav-post-title">Compreendendo as Cartas Paulinas</span>
+                        </a>
+                    </nav>
+
+                </article>
+
+                <section class="related-posts-section">
+                    <h2 class="section-title">Estudos Relacionados</h2>
+                    <div class="related-grid">
+                        <article class="feed-card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=500&auto=format&fit=crop" alt="Relacionado 1">
+                                <span class="tag tag-estudos">Estudos</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>A Aliança no Antigo Testamento</h3>
+                                <p>Descubra como os pactos de Deus prefiguravam o Messias.</p>
+                                <div class="card-footer">
+                                    <span class="author">Por <strong>Pr. Tiago</strong></span>
+                                    <span class="date">10 Out, 2026</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="feed-card">
+                            <div class="card-image">
+                                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=500&auto=format&fit=crop" alt="Relacionado 2">
+                                <span class="tag tag-estudos">Estudos</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>O Fruto do Espírito na Prática</h3>
+                                <p>Como manifestar o caráter de Cristo no dia a dia.</p>
+                                <div class="card-footer">
+                                    <span class="author">Por <strong>Profª. Maria</strong></span>
+                                    <span class="date">05 Out, 2026</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- COLUNA DIREITA (SIDEBAR) -->
+            <aside class="sidebar">
+                <div class="widget search-widget">
+                    <form class="search-form" onsubmit="event.preventDefault(); alert('Pesquisando...');">
+                        <input type="text" placeholder="Pesquisar estudos..." required class="search-input">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </form>
+                </div>
+
+                <div class="widget verse-widget">
+                    <div class="widget-header">
+                        <h3>📖 Versículo do Dia</h3>
+                    </div>
+                    <div class="verse-content">
+                        <blockquote class="verse-quote" id="dailyVerse">
+                            "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho."
+                        </blockquote>
+                        <cite class="verse-ref" id="dailyRef">— Salmos 119:105</cite>
+                        <button class="verse-btn" onclick="nextVerse()">🔄 Outro Versículo</button>
+                    </div>
+                </div>
+
+                <div class="widget bible-word-widget">
+                    <div class="widget-header">
+                        <h3>🌱 Palavra Bíblica Diária</h3>
+                        <span class="word-day-badge">Dia 1</span>
+                    </div>
+                    <div class="word-content">
+                        <h4>Permanecendo Firmes</h4>
+                        <p class="word-verse">📖 1 Coríntios 15:58</p>
+                        <p>Nossa esperança repousa na fidelidade imutável da Palavra de Deus.</p>
+                    </div>
+                </div>
+
+                <div class="widget popular-simple-widget">
+                    <div class="widget-header">
+                        <h3>🔥 Mais Acessados</h3>
+                    </div>
+                    <ol class="simple-rank-list">
+                        <li class="simple-rank-item">
+                            <span class="rank-number">1</span>
+                            <a href="#" class="rank-link">
+                                <span class="rank-title">Aula 05: A Armadura de Deus</span>
+                                <small class="rank-views-badge">12.4k acessos</small>
+                            </a>
+                        </li>
+                        <li class="simple-rank-item">
+                            <span class="rank-number">2</span>
+                            <a href="#" class="rank-link">
+                                <span class="rank-title">O Verdadeiro Significado da Mordomia</span>
+                                <small class="rank-views-badge">9.8k acessos</small>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="widget newsletter-widget">
+                    <div class="widget-header">
+                        <h3>📩 Receba as Novidades</h3>
+                    </div>
+                    <p class="newsletter-desc">Cadastre seu e-mail e receba os novos estudos da EBD.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrição realizada!');">
+                        <input type="email" placeholder="Seu melhor e-mail..." required class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Assinar Blog</button>
+                    </form>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="../index.html" class="brand-logo">
+                    <span class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <path d="M12 6v10"></path>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+                </a>
+                <p class="footer-description">Conteúdo bíblico, estudos e lições para a Escola Bíblica Dominical e crescimento cristão.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="../index.html">Início</a>
+                <a href="../estudos.html">Estudos</a>
+                <a href="../reflexoes.html">Reflexões</a>
+                <a href="../sobre.html">Sobre</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eu vi na EBD. Criado por <strong>Tiago Correia</strong> — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        const verses = [
+            { quote: "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho.", ref: "Salmos 119:105" },
+            { quote: "Tudo posso naquele que me fortalece.", ref: "Filipenses 4:13" }
+        ];
+        let verseIndex = 0;
+        function nextVerse() {
+            verseIndex = (verseIndex + 1) % verses.length;
+            document.getElementById('dailyVerse').textContent = `"${verses[verseIndex].quote}"`;
+            document.getElementById('dailyRef').textContent = `— ${verses[verseIndex].ref}`;
+        }
+    </script>
+</body>
+</html>
