@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Eu vi na EBD</title>
+    <!-- CSS compartilhado do projeto -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVBAR -->
+    <header class="navbar-header">
+        <div class="header-container">
+            
+            <!-- Logo do Blog -->
+            <a href="index.html" class="brand-logo" aria-label="Página Inicial - Eu vi na EBD">
+                <span class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <path d="M12 6v10"></path>
+                    </svg>
+                </span>
+                <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+            </a>
+
+            <!-- Botão Hambúrguer Mobile -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Links de Navegação -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="estudos.html" class="nav-link">Estudos</a></li>
+                    <li><a href="reflexoes.html" class="nav-link">Reflexões</a></li>
+                    <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+                </ul>
+
+                <!-- Alternador de Tema Claro / Escuro -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar Tema">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                    <span class="theme-text">Tema</span>
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA SOBRE -->
+    <main class="page-wrapper">
+        <div class="page-container sobre-container">
+            
+            <!-- SEÇÃO DE APRESENTAÇÃO E BIO -->
+            <section class="about-hero-card">
+                <div class="about-hero-avatar">
+                    <!-- Ícone estilizado de Teólogo / Leitor Bíblico -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="about-hero-text">
+                    <span class="about-badge">Fundador & Autor</span>
+                    <h1 class="about-name">Tiago Correia</h1>
+                    <p class="about-role">Estudante de Teologia & Apaixonado pelas Escrituras</p>
+                    <blockquote class="about-quote">
+                        "Quem conhece a Deus, precisa conhecer a Sua Palavra."
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- MINHA JORNADA E VISÃO DO BLOG -->
+            <section class="about-content-section">
+                <div class="about-text-block">
+                    <h2>Minha Jornada com a Palavra</h2>
+                    <p>
+                        Desde a minha adolescência, fui cativado por tudo o que envolve a Bíblia Sagrada. O fascínio pelas suas histórias, profecias, contextos históricos e, acima de tudo, pela revelação do caráter de Deus transformou a minha forma de enxergar a vida e o propósito da fé.
+                    </p>
+                    <p>
+                        Como estudante de Teologia, dedico-me a aprofundar as raízes do conhecimento teológico para traduzi-las de forma simples, acessível e edificante. Acredito convictamente no poder soberano de Deus e na sabedoria transformadora que o estudo dedicado das Escrituras proporciona a qualquer vocacionado ou cristão sincero.
+                    </p>
+                </div>
+
+                <div class="about-text-block">
+                    <h2>O Propósito do "Eu vi na EBD"</h2>
+                    <p>
+                        O blog <strong>Eu vi na EBD</strong> nasceu com o objetivo de servir como uma ferramenta de apoio a professores, alunos e estudiosos da Escola Bíblica Dominical. Este espaço é dedicado ao compartilhamento de:
+                    </p>
+                    <ul>
+                        <li><strong>Estudos Bíblicos Aprofundados:</strong> Análises teológicas e contextos históricos explicados de forma clara.</li>
+                        <li><strong>Reflexões e Crônicas:</strong> Aplicações práticas da fé para o cotidiano do cristão contemporâneo.</li>
+                        <li><strong>Apoio às Revistas EBD:</strong> Resumos e acompanhamento dos temas das editoras Betel e CPAD.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PILARES E VALORES -->
+            <section class="about-pillars-section">
+                <h2 class="section-title center-title">Nossos Pilares</h2>
+                <div class="pillars-grid">
+                    
+                    <div class="pillar-card">
+                        <span class="pillar-icon">📖</span>
+                        <h3>Fidelidade Bíblica</h3>
+                        <p>Compromisso inegociável com a sã doutrina e a exegese fiel das Escrituras Sagradas.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-icon">💡</span>
+                        <h3>Ensino Prático</h3>
+                        <p>Conteúdo estruturado para facilitar a compreensão do aluno e o preparo de aulas marcantes.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-icon">🌱</span>
+                        <h3>Crescimento Espiritual</h3>
+                        <p>Foco na edificação pessoal, maturação da fé e comunhão no corpo de Cristo.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CHAMADA PARA AÇÃO (CTA) -->
+            <section class="about-cta-card">
+                <h2>Acompanhe nossos Conteúdos</h2>
+                <p>Explore nossos estudos e reflexões ou assine a newsletter para receber novidades na sua caixa de entrada.</p>
+                <div class="cta-buttons">
+                    <a href="estudos.html" class="cta-btn primary">Ver Estudos Bíblicos</a>
+                    <a href="reflexoes.html" class="cta-btn secondary">Ler Reflexões</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- RODAPÉ DO BLOG -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <path d="M12 6v10"></path>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+                </a>
+                <p class="footer-description">Conteúdo bíblico, estudos e lições para a Escola Bíblica Dominical e crescimento cristão.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html">Início</a>
+                <a href="estudos.html">Estudos</a>
+                <a href="reflexoes.html">Reflexões</a>
+                <a href="sobre.html">Sobre</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eu vi na EBD. Criado por <strong>Tiago Correia</strong> — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE INTERAÇÃO -->
+    <script>
+        // Menu Hambúrguer Mobile
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Alternador de Tema
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
