@@ -285,6 +285,79 @@
         }
     </style>
 </head>
+
+    <body>
+
+    <header class="navbar-header">
+        <div class="header-container">
+            
+            <!-- Logo do Blog (Vinculada à página inicial) -->
+            <a href="index.html" class="brand-logo" aria-label="Página Inicial - Eu vi na EBD">
+                <span class="logo-icon">
+                    <!-- Ícone minimalista de Bíblia / Livro Aberto em SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <path d="M12 6v10"></path>
+                    </svg>
+                </span>
+                <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
+            </a>
+
+            <!-- Botão Hambúrguer para Mobile/Tablet -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navegação de Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Início</a></li>
+                    <li><a href="#estudos" class="nav-link">Estudos</a></li>
+                    <li><a href="#reflexoes" class="nav-link">Reflexões</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                </ul>
+
+                <!-- Alternador de Tema Claro / Escuro -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar Tema">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                    <span class="theme-text">Tema</span>
+                </button>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Script leve para interatividade do menu e do tema -->
+    <script>
+        // Lógica do Menu Hambúrguer
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Lógica de Alternância de Tema (Claro / Escuro)
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const htmlElement = document.documentElement;
+
+        // Recupera o tema salvo no navegador (se houver)
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
 <body>
 
     <header>
