@@ -537,3 +537,212 @@ body {
     .footer-brand { display: flex; flex-direction: column; align-items: center; }
     .footer-links { justify-content: center; }
 }
+
+/* ===================================================
+   PÁGINA DE ESTUDOS (LAYOUT DE COLUNA ÚNICA)
+   =================================================== */
+.page-wrapper {
+    padding: 2.5rem 0 4rem 0;
+}
+
+.page-container.single-column {
+    max-width: 860px; /* Largura focada para leitura em coluna única */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.page-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* LISTA DE CARDS HORIZONTAIS EM COLUNA ÚNICA */
+.posts-list-single {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.post-card-horizontal {
+    display: flex;
+    background-color: var(--header-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card-horizontal:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.post-card-image {
+    position: relative;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-card-image .tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.post-card-content {
+    padding: 1.35rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-meta-top {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.post-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+}
+
+.post-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-title a:hover {
+    color: var(--primary-color);
+}
+
+.post-excerpt {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.read-more-btn {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+
+.read-more-btn:hover {
+    opacity: 0.8;
+}
+
+/* ===================================================
+   PAGINAÇÃO NUMÉRICA
+   =================================================== */
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.pagination-numbers {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.page-number, .pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.page-number.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.page-number:hover:not(.active), .pagination-btn:hover:not(.disabled) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination-dots {
+    color: var(--text-muted);
+    font-weight: bold;
+    padding: 0 0.2rem;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (MOBILE & TABLETS)
+   =================================================== */
+@media (max-width: 680px) {
+    .post-card-horizontal {
+        flex-direction: column;
+    }
+
+    .post-card-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .page-title {
+        font-size: 1.6rem;
+    }
+
+    .pagination-container {
+        flex-wrap: wrap;
+    }
+}
