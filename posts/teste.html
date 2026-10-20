@@ -3,98 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título do Post - Eu vi na EBD</title>
-    <!-- O ../ faz o arquivo buscar o CSS na pasta raiz -->
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+    <title>O Verdadeiro Significado da Mordomia Cristã na Atualidade - Eu vi na EBD</title>
+    
+    <!-- CSS EMBUTIDO COMPLETO (SISTEMA DE DESIGN TOTALMENTE AUTÔNOMO) -->
+    <style>
+        /* ===================================================
+           VARIÁVEIS DE TEMA (CLARO / ESCURO)
+           =================================================== */
+        :root[data-theme="light"] {
+            --bg-color: #f8fafc;
+            --header-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --primary-color: #1d4ed8;
+            --primary-hover: #1e40af;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-    <!-- CABEÇALHO (Links ajustados com ../) -->
-    <header class="navbar-header">
-        <div class="header-container">
-            <a href="../index.html" class="brand-logo">
-                <span class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        <path d="M12 6v10"></path>
-                    </svg>
-                </span>
-                <span class="logo-text">Eu vi na <strong class="highlight">EBD</strong></span>
-            </a>
+        :root[data-theme="dark"] {
+            --bg-color: #0f172a;
+            --header-bg: #1e293b;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary-color: #60a5fa;
+            --primary-hover: #93c5fd;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
 
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+        /* RESET E BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-            <nav class="nav-menu" id="navMenu">
-                <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="../estudos.html" class="nav-link">Estudos</a></li>
-                    <li><a href="../reflexoes.html" class="nav-link">Reflexões</a></li>
-                    <li><a href="../sobre.html" class="nav-link">Sobre</a></li>
-                </ul>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar Tema">
-                    <span class="theme-icon sun-icon">☀️</span>
-                    <span class="theme-icon moon-icon">🌙</span>
-                    <span class="theme-text">Tema</span>
-                </button>
-            </nav>
-        </div>
-    </header>
+        /* ===================================================
+           CABEÇALHO E NAVBAR
+           =================================================== */
+        .navbar-header {
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
 
-    <!-- CONTEÚDO DO POST -->
-    <main class="main-wrapper">
-        <div class="content-container">
-            <div class="main-content">
-                <article class="single-post-article">
-                    <h1 class="single-post-title">Título do Seu Artigo Aqui</h1>
-                    <div class="single-post-body">
-                        <p>Escreva o conteúdo do seu artigo aqui...</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </main>
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    <!-- RODAPÉ (Links ajustados com ../) -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="../index.html">Início</a>
-                <a href="../estudos.html">Estudos</a>
-                <a href="../reflexoes.html">Reflexões</a>
-                <a href="../sobre.html">Sobre</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Eu vi na EBD. Criado por <strong>Tiago Correia</strong> — Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.2s ease;
+        }
 
-    <!-- SCRIPT DE TEMA E MENU MOBILE -->
-    <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navMenu = document.getElementById('navMenu');
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+        .brand-logo:hover { transform: translateY(-1px); }
 
-        const themeToggleBtn = document.getElementById('themeToggleBtn');
-        const htmlElement = document.documentElement;
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 6px;
+            flex-shrink: 0;
+        }
 
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    </script>
-</body>
-</html>
+        .logo-icon svg { width: 100%; height: 100%; }
+        .logo-text { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; }
+        .logo-text .highlight { color: var(--primary-color); font-weight: 800; }
+
+        .nav-menu { display: flex; align-items: center; gap: 2rem; }
+        .nav-list { display: flex; list-style: none; gap: 1.5rem; }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.4rem 0.2rem;
+            position: relative;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--primary-color); }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.2s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .theme-toggle-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.45rem 0.85rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        :root[data-theme="light"] .moon-icon { display: none; }
+        :root[data-theme="dark"] .sun-icon { display: none; }
+
+        .hamburger-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 19px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-btn .bar {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===================================================
+           LAYOUT PRINCIPAL (2 COLUNAS)
+           =================================================== */
+        .main-wrapper { padding: 2rem 0; }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2.5rem;
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-block;
+            padding: 0.22rem 0.55rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .tag-featured { background-color: #0284c7; color: #fff; }
+        .tag-estudos { background-color: var(--primary-color); color: #fff; }
+        .tag-reflexoes { background-color: #059669; color: #fff; }
+
+        /* ===================================================
+           ESTILOS DO ARTIGO / POST
+           =================================================== */
+        .single-post-article {
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2.5rem;
+        }
+
+        .post-breadcrumbs {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .post-breadcrumbs a { color: var(--text-muted); text-decoration: none; }
+        .post-breadcrumbs a:hover { color: var(--primary-color); }
+
+        .single-post-title {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--text-color);
+            margin: 0.75rem 0 1.25rem 0;
+        }
+
+        .single-post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .author-info-inline { display: flex; align-items: center; gap: 0.75rem; }
+
+        .author-avatar-mini {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-name-text { font-size: 0.9rem; color: var(--text-color); display: block; }
+        .meta-sub { font-size: 0.75rem; color: var(--text-muted); display: block; }
+        .post-stats-inline { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+
+        .single-post-cover {
+            margin: 1.5rem 0 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .single-post-cover img {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .cover-caption {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* TIPOGRAFIA DO TEXTO */
+        .single-post-body {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-color);
+        }
+
+        .single-post-body p { margin-bottom: 1.4rem; }
+        .single-post-body .lead-paragraph { font-size: 1.15rem; font-weight: 500; line-height: 1.7; }
+        .single-post-body h2 { font-size: 1.45rem; font-weight: 700; margin: 2rem 0 1rem 0; color: var(--text-color); }
+        .single-post-body h3 { font-size: 1.2rem; font-weight: 700; margin: 1.5rem 0 0.75rem 0; color: var(--text-color); }
+
+        .article-quote {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.75rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .article-quote cite {
+            display: block;
+            font-size: 0.85rem;
+            font-style: normal;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+            text-align: right;
+        }
+
+        .callout-box {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.75rem 0;
+        }
+
+        .callout-box h3 { margin-top: 0; font-size: 1.05rem; color: var(--primary-color); }
+        .callout-box ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        .callout-box li { font-size: 0.95rem; margin-bottom: 0.4rem; line-height: 1.5; }
+
+        /* COMPARTILHAMENTO E AUTOR */
+        .post-share-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .share-title { font-size: 0.9rem; font-weight: 700; color: var(--text-color); }
+        .share-buttons { display: flex; gap: 0.6rem; }
+
+        .share-btn {
+            padding: 0.
