@@ -667,3 +667,152 @@ body {
         grid-template-columns: 1fr; /* Cards ocupam 100% no celular */
     }
 }
+
+/* ===================================================
+   PALAVRA BÍBLICA / DEVOCIONAL
+   =================================================== */
+.bible-word-widget {
+    background-color: var(--header-bg);
+    border-left: 4px solid #059669;
+}
+
+.word-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #059669;
+    letter-spacing: 0.04em;
+}
+
+.word-content h4 {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0.2rem 0 0.4rem 0;
+}
+
+.word-content p {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+/* ===================================================
+   ÁREA DE ASSINATURA (NEWSLETTER)
+   =================================================== */
+.newsletter-widget {
+    background-color: var(--header-bg);
+    border: 1px solid var(--border-color);
+}
+
+.newsletter-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 0.85rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.newsletter-input:focus {
+    border-color: var(--primary-color);
+}
+
+.newsletter-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ===================================================
+   MAIS ACESSADOS (FORMATO ULTRACOMPACTO)
+   =================================================== */
+.compact-ranking-widget {
+    padding: 1.1rem;
+}
+
+.compact-ranking-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.compact-ranking-list li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    padding: 0.35rem 0.4rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.compact-ranking-list li a:hover {
+    background-color: var(--bg-color);
+}
+
+.rank-num {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.rank-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.rank-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compact-ranking-list li a:hover .rank-title {
+    color: var(--primary-color);
+}
+
+.rank-views {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
