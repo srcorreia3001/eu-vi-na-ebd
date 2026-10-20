@@ -539,20 +539,20 @@ body {
 }
 
 /* ===================================================
-   PÁGINA DE ESTUDOS (LAYOUT DE COLUNA ÚNICA)
+   PÁGINA DE ESTUDOS (GRADE DE 3 COLUNAS - 12 CARDS)
    =================================================== */
 .page-wrapper {
     padding: 2.5rem 0 4rem 0;
 }
 
-.page-container.single-column {
-    max-width: 860px; /* Largura focada para leitura em coluna única */
+.page-container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
 .page-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid var(--border-color);
 }
@@ -570,92 +570,93 @@ body {
     line-height: 1.5;
 }
 
-/* LISTA DE CARDS HORIZONTAIS EM COLUNA ÚNICA */
-.posts-list-single {
-    display: flex;
-    flex-direction: column;
+/* GRADE DE 3 COLUNAS (12 CARDS) */
+.posts-grid-12 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha no desktop */
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
 
-.post-card-horizontal {
-    display: flex;
+/* CARDS DA GRADE */
+.study-grid-card {
     background-color: var(--header-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.post-card-horizontal:hover {
-    transform: translateY(-3px);
+.study-grid-card:hover {
+    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 
-.post-card-image {
+.study-card-image {
     position: relative;
-    width: 280px;
-    flex-shrink: 0;
+    height: 170px;
 }
 
-.post-card-image img {
+.study-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.post-card-image .tag {
+.study-card-image .tag {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 10px;
+    left: 10px;
 }
 
-.post-card-content {
-    padding: 1.35rem 1.5rem;
+.study-card-body {
+    padding: 1.15rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.post-meta-top {
-    font-size: 0.78rem;
+.study-card-meta {
+    font-size: 0.75rem;
     color: var(--text-muted);
     margin-bottom: 0.4rem;
 }
 
-.post-title {
-    font-size: 1.15rem;
+.study-card-title {
+    font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.35;
     margin-bottom: 0.5rem;
 }
 
-.post-title a {
+.study-card-title a {
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.post-title a:hover {
+.study-card-title a:hover {
     color: var(--primary-color);
 }
 
-.post-excerpt {
-    font-size: 0.88rem;
+.study-card-excerpt {
+    font-size: 0.83rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.45;
     margin-bottom: 1rem;
     flex-grow: 1;
 }
 
-.post-footer {
+.study-card-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0.85rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
 }
 
@@ -670,9 +671,7 @@ body {
     opacity: 0.8;
 }
 
-/* ===================================================
-   PAGINAÇÃO NUMÉRICA
-   =================================================== */
+/* PAGINAÇÃO NUMÉRICA */
 .pagination-container {
     display: flex;
     align-items: center;
@@ -725,17 +724,16 @@ body {
     padding: 0 0.2rem;
 }
 
-/* ===================================================
-   RESPONSIVIDADE (MOBILE & TABLETS)
-   =================================================== */
-@media (max-width: 680px) {
-    .post-card-horizontal {
-        flex-direction: column;
+/* RESPONSIVIDADE PARA TABLET E MOBILE */
+@media (max-width: 992px) {
+    .posts-grid-12 {
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
     }
+}
 
-    .post-card-image {
-        width: 100%;
-        height: 180px;
+@media (max-width: 640px) {
+    .posts-grid-12 {
+        grid-template-columns: 1fr; /* 1 por linha no celular */
     }
 
     .page-title {
